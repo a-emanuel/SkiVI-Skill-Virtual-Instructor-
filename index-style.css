@@ -1,0 +1,132 @@
+/*Remove the default styling*/
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover, button:hover {
+    color: gold;
+}
+
+ul {
+    list-style-type: none;
+    padding-left:0;
+}
+
+button {
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+body {
+    width: 100vw;
+    height: 400vh;
+    margin: 0%;
+}
+
+/*Top navigation bar*/
+.nav-top {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 3rem;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid #404f5e;
+    border-bottom: 1px solid #404f5e;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+}
+
+.nav-top-item {
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 0px;
+    align-self: center;
+    color: #1865f2;
+}
+
+.nav-courses {
+    border: 2px solid #797c80;
+    display: none;
+}
+
+.nav-course {
+    border: 1px dashed #a6a6a7;
+    background-color:aqua;
+}
+
+/*Navigation bar title*/
+.nav-title-wrap { 
+    color: rgba(0, 0, 0, 0);
+    width: 70vw;
+    height: 2.5rem;
+    text-align: center;
+    background: url(Resources/sea.jpg) no-repeat left/120%;
+    animation: sliding-background 40s linear infinite;
+}
+
+.nav-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 2.5rem;
+    background: white;
+    color: black;
+    font-family: 'Coiny', cursive;
+    font-size: 2vw;
+    letter-spacing: 1vw;
+    mix-blend-mode: lighten;
+    text-transform: uppercase;
+    text-shadow: 0.2vw 0.17rem 3px rgba(0, 0, 0, 0.2);
+}
+  
+@keyframes sliding-background {
+    0%, 100% {
+      background-position: 0 40%;
+    }
+    50% {
+      background-position: 100% 40%;
+    }
+}
+
+/*Main area*/
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+.des-general {
+    background-color: #1865f2;
+}
+
+.des-instrument {
+    background-color: gold;
+}
+
+.des-cpr {
+    background-color: greenyellow;
+}
+
+.des-surviving {
+    background-color: aquamarine;
+}
