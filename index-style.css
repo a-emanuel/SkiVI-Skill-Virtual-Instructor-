@@ -27,9 +27,11 @@ button {
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
     height: 400vh;
     margin: 0%;
+    max-width: 100%;
 }
 
 /*Top navigation bar*/
@@ -49,8 +51,8 @@ body {
 }
 
 .nav-top-item {
-    font-family: Arial;
-    font-size: 20px;
+    font-family: inherit;
+    font-size: 1.2rem;
     font-weight: 700;
     line-height: 20px;
     padding: 0px;
@@ -78,6 +80,10 @@ body {
     animation: sliding-background 40s linear infinite;
 }
 
+.nav-title:hover {
+    color: black;
+}
+
 .nav-title {
     display: flex;
     justify-content: center;
@@ -86,11 +92,11 @@ body {
     height: 2.5rem;
     background: white;
     color: black;
-    font-family: 'Coiny', cursive;
-    font-size: 2vw;
-    letter-spacing: 1vw;
+    /*font-family: 'Coiny', cursive;*/
+    font-size: 1.7rem;
+    letter-spacing: 0.7vw;
     mix-blend-mode: lighten;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     text-shadow: 0.2vw 0.17rem 3px rgba(0, 0, 0, 0.2);
 }
   
@@ -109,24 +115,70 @@ main {
     flex-direction: column;
 }
 
-.description {
-    display: block;
+p {
+    width: 100ch;
+    color:azure;
+    font-size: 1.333rem;
+    text-align: center;
+}
+
+.des {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     width: 100vw;
     height: 100vh;
 }
 
+
+.des-title {
+    margin: 5rem;
+}
+
+.des-text {
+    margin: 3rem;
+}
+
 .des-general {
-    background-color: #1865f2;
+    background: url(Resources/mountain.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.des-general-title {
+    font-size: 4.209rem;
+}
+
+.des-course-title {
+    color: beige;
+    font-size: 3.157rem;
 }
 
 .des-instrument {
-    background-color: gold;
+    background: url(Resources/guitar.webp);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: contain;
+    align-items: flex-end;
 }
 
 .des-cpr {
-    background-color: greenyellow;
+    background: url(Resources/resuscitation.webp);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 100%;
 }
 
 .des-surviving {
-    background-color: aquamarine;
+    background: url(Resources/survive.webp);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: contain;
+    align-items: flex-end;
 }
