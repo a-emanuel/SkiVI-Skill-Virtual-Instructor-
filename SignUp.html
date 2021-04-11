@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="./SignUp.css">
+</head>
+<body>
+
+<div class="wrapper">   
+    <img src="./Resources/logo.png" alt="Logo">
+    <div class="title">
+      Inregistrare
+    </div>
+    <div class="form">
+        <div class="inputfield">
+            <label for="username">Username</label>
+            <input type="text" class="input" id="username">
+        </div>
+       <div class="inputfield">
+          <label for="lname">Last Name</label>
+          <input type="text" class="input" id="lname">
+       </div>  
+        <div class="inputfield">
+          <label for="fname">First Name</label>
+          <input type="text" class="input" id="fname">
+       </div>  
+       <div class="inputfield">
+          <label for="Password">Password</label>
+          <input placeholder="minimum 6 characters" type="password" class="input" id="Password">
+       </div>  
+      <div class="inputfield">
+          <label for="cPassword">Confirm Password</label>
+          <input placeholder="minimum 6 characters" type="password" class="input" id="cPassword">
+       </div> 
+       <div class="inputfield">
+        <label for="start">Birthdate</label>
+        <input type="date" id="start" name="trip-start"
+        min="1925-01-01" max="2018-12-31">
+       </div>
+            <div class="custom_select inputfield">
+                <div>Gender: </div>
+                <div>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="male">
+                </div>
+                
+                <div>
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                </div>
+                <div>
+                    <label for="other">Other</label>
+                    <input type="radio" name="gender" id="other" value="other">
+                </div>
+                
+            </div>
+
+        <div class="inputfield">
+          <label for="email">Email Address</label>
+          <input placeholder="example@gmail.com" type="email" class="input" id="email">
+       </div> 
+      <div class="inputfield">
+          <label for="phone">Phone Number</label>
+          <input placeholder="ex: 0741 784 932" type="number" class="input" id="phone">
+       </div> 
+       <div class="inputfield">
+        <label for="country">Country/State</label>
+        <input type="text" class="input" id="country">
+     </div>
+     <div class="inputfield">
+        <label for="region">Region</label>
+        <input type="text" class="input" id="region">
+     </div>
+      <div class="inputfield terms">
+          <label class="check">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <p> 
+              Agreed to  
+            <a href="./Resources/Terms_and_conditions.pdf">terms and conditions</a>
+          </p>
+       </div> 
+      <div class="inputfield">
+        <input type="submit" value="Creeaza Cont" class="btn">
+      </div>
+    </div>
+</div>	
+	
+</body>
+</html>
