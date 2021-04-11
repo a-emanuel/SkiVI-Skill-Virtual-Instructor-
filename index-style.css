@@ -117,6 +117,7 @@ main {
 
 p {
     width: 100ch;
+    color: beige;
     color:azure;
     font-size: 1.333rem;
     text-align: center;
@@ -144,6 +145,7 @@ p {
     background: url(Resources/mountain.jpg);
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
+    /*background-attachment: fixed;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -155,7 +157,8 @@ p {
 }
 
 .des-course-title {
-    color: beige;
+    color: antiquewhite;
+    /*color: rebeccapurple;*/
     font-size: 3.157rem;
 }
 
@@ -164,7 +167,19 @@ p {
     background-color: black;
     background-repeat: no-repeat;
     background-size: contain;
+    background-attachment: fixed;
     align-items: flex-end;
+}
+
+.des-instrument p,
+.des-surviving p {
+    text-align: right;
+    width: 70ch;
+}
+
+.des-cpr p {
+    text-align: left;
+    width: 70ch;
 }
 
 .des-cpr {
@@ -173,6 +188,7 @@ p {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 100%;
+    background-attachment: fixed;
 }
 
 .des-surviving {
@@ -181,4 +197,5 @@ p {
     background-repeat: no-repeat;
     background-size: contain;
     align-items: flex-end;
+    background-attachment: fixed;
 }
