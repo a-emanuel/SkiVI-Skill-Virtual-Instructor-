@@ -1,0 +1,203 @@
+
+
+/*Remove the default styling*/
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover, button:hover {
+    color: gold;
+}
+
+ul {
+    list-style-type: none;
+    padding-left:0;
+}
+
+button {
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: 400vh;
+    margin: 0%;
+    max-width: 100%;
+}
+
+/*Top navigation bar*/
+.nav-top {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 3rem;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid #404f5e;
+    border-bottom: 1px solid #404f5e;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    z-index: 100;
+}
+
+.nav-top-item {
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 0px;
+    align-self: center;
+    color: #1865f2;
+}
+
+.nav-courses {
+    border: 2px solid #797c80;
+    display: none;
+}
+
+.nav-course {
+    border: 1px dashed #a6a6a7;
+    background-color:aqua;
+}
+
+/*Navigation bar title*/
+.nav-title-wrap { 
+    color: rgba(0, 0, 0, 0);
+    width: 70vw;
+    height: 2.5rem;
+    text-align: center;
+    background: url(../Resources/sea.jpg) no-repeat left/120%;
+    animation: sliding-background 40s linear infinite;
+}
+
+.nav-title:hover {
+    color: black;
+}
+
+.nav-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 2.5rem;
+    background: white;
+    color: black;
+    /*font-family: 'Coiny', cursive;*/
+    font-size: 1.7rem;
+    letter-spacing: 0.7vw;
+    mix-blend-mode: lighten;
+    /*text-transform: uppercase;*/
+    text-shadow: 0.2vw 0.17rem 3px rgba(0, 0, 0, 0.2);
+}
+  
+@keyframes sliding-background {
+    0%, 100% {
+      background-position: 0 40%;
+    }
+    50% {
+      background-position: 100% 40%;
+    }
+}
+
+/*Main area*/
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    width: 100ch;
+    color: beige;
+    color:azure;
+    font-size: 1.333rem;
+    text-align: center;
+}
+
+.des {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.des-title {
+    margin: 5rem;
+}
+
+.des-text {
+    margin: 3rem;
+}
+
+.des-general {
+    background: url(../Resources/mountain.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    /*background-attachment: fixed;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.des-general-title {
+    font-size: 4.209rem;
+}
+
+.des-course-title {
+    color: antiquewhite;
+    /*color: rebeccapurple;*/
+    font-size: 3.157rem;
+}
+
+.des-instrument {
+    background: url(../Resources/guitar.webp);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    align-items: flex-end;
+}
+
+.des-instrument p,
+.des-surviving p {
+    text-align: right;
+    width: 70ch;
+}
+
+.des-cpr p {
+    text-align: left;
+    width: 70ch;
+}
+
+.des-cpr {
+    background: url(../Resources/resuscitation.webp);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 100%;
+    background-attachment: fixed;
+}
+
+.des-surviving {
+    background: url(../Resources/survive.webp);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: contain;
+    align-items: flex-end;
+    background-attachment: fixed;
+}
