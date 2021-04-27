@@ -1,5 +1,60 @@
 :root {
-    --color-primary: #fff;
-    --color-secondary: #fff;
-    --color-accent: #fff;
+  --color-primary: #eb335e;
+  --color-secondary: #9233eb;
+  --color-accent: #34eb74;
+  --color-headings: #ebbd33;
+  --color-text-primary: #b6b6b6;
+  --color-text-secondary: #ececec;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 2.4rem;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-headings);
+  margin-bottom: 2.5rem;
+}
+
+h1 {
+    font-size: 7rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+p {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 1024px){
+    body {
+        font-size: 1.8rem;
+    }
+
+    h1 {
+        font-size: 8rem;
+    }
+
+    h2 {
+        font-size: 5rem;
+    }
+
+    h3 {
+        font-size: 2.4rem;
+    }
 }
