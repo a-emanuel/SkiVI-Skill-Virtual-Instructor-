@@ -7,6 +7,8 @@
   --color-text-primary: #b6b6b6;
   --color-text-secondary: #ececec;
   --color-link: #495057;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
 }
 
 html {
@@ -18,6 +20,8 @@ body {
   font-size: 2.4rem;
   line-height: 1.4;
   color: var(--color-text-primary);
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -108,53 +112,74 @@ a {
 
 /* Lists */
 .list {
-    list-style: none;
-    padding-left: 0;
-    color: var(--color-text-secondary);
+  list-style: none;
+  padding-left: 0;
+  color: var(--color-text-secondary);
 }
 
-.list--inline .list__item{
-    display: inline-block;
-    margin-right: 2rem;
+.list--inline .list__item {
+  display: inline-block;
+  margin-right: 2rem;
 }
 
 /* Buttons */
 .btn {
-    font-size: 1.8rem;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 1rem 0;
-    padding: 1rem 2rem;
-    border: 0;
-    border-radius: 40px;
-    cursor: pointer;
-    white-space: nowrap;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  padding: 1rem 2rem;
+  border: 0;
+  border-radius: 40px;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn--primary {
-    background: var(--color-secondary);
-    color: var(--color-text-secondary);
+  background: var(--color-secondary);
+  color: var(--color-text-secondary);
 }
 
 .btn--primary:hover {
-    background: var(--color-primary);
+  background: var(--color-primary);
 }
 
 @media screen and (min-width: 1024px) {
-    .btn {
-        font-size: 1.5rem;
-    }
+  .btn {
+    font-size: 1.5rem;
+  }
 }
 
 /* Icons */
 .icon {
-    width: 3rem;
-    height: 3rem;
+  width: 5rem;
+  height: 5rem;
+  fill: #ff7eee;
+  fill: #df49a6;
+  fill: var(--color-secondary);
 }
 
-.icon--primary {
-    fill: var(--color-primary);
+.icon--logo {
+  fill: #5b8386;
+}
+
+.logo-wrap::after {
+  content: 'Skill Virtual Instructor';
+  white-space: nowrap;
+}
+/*#495057*/
+
+@media screen and (min-width: 1024px) {
+  .icon {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  .logo-wrap::after {
+    content: 'SkiVI';
+    
+  }
 }
 
 /* Inputs */
@@ -187,3 +212,149 @@ a {
     font-size: 1.5rem;
   }
 }
+
+/* Grids */
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Collapsibles */
+.collapsible__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+}
+
+/* Scroll Bar*/
+body::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+}
+
+/* Navigation Bar */
+.nav {
+  /*width: 100vw;
+  position: fixed;*/
+  background-color: var(--bg-primary);
+  display: flex;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+  padding: 1rem;
+  align-items: center;
+}
+
+.nav__list {
+  width: 100%;
+  margin: 0;
+}
+
+/*TODO: fix align center
+.nav__item {
+  text-align: center;
+}*/
+
+.nav__link {
+  color: var(--color-text-primary);
+}
+
+.nav__link:hover {
+  color: var(--color-text-secondary);
+}
+
+.nav__link:hover .nav__icon {
+  fill: var(--color-primary);
+}
+
+.nav__toggler {
+  width: 5rem;
+  height: 5rem;
+  fill: var(--color-secondary);
+  cursor: pointer;
+}
+
+.collapsible--expanded .nav__toggler {
+  fill: var(--color-primary);
+}
+
+@media screen and (min-width: 1024px) {
+  /*TODO: TEMP*/
+  main {
+    margin-left: 8rem;
+  }
+
+  .nav {
+    width: 8rem;
+    height: 100vh;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    transition: width 200ms ease;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
+    height: auto;
+
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  .nav__toggler {
+    display: none;
+  }
+
+  .nav__text {
+    display: none;
+  }
+
+  .nav:hover {
+    width: 25.6rem;
+  }
+
+  .nav:hover .nav__text {
+    display: block;
+  }
+}
+/*
+body {
+  height: 200vh;
+  width: 200vw;
+}
+*/
+
+
+
+
