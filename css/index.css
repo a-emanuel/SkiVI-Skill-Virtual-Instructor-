@@ -9,6 +9,7 @@
   --color-link: #495057;
   --bg-primary: #23232e;
   --bg-secondary: #141418;
+  --transition-speed: 500ms;
 }
 
 html {
@@ -113,30 +114,36 @@ a {
 /* Lists */
 .list {
   list-style: none;
-  padding-left: 0;
+  padding: 0;
+  margin: 0;
   color: var(--color-text-secondary);
 }
 
+/*
 .list--inline .list__item {
   display: inline-block;
   margin-right: 2rem;
 }
+*/
 
 /* Buttons */
 .btn {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn--primary {
   font-size: 1.8rem;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   margin: 1rem 0;
   padding: 1rem 2rem;
-  border: 0;
   border-radius: 40px;
-  cursor: pointer;
   white-space: nowrap;
-}
-
-.btn--primary {
   background: var(--color-secondary);
   color: var(--color-text-secondary);
 }
@@ -158,15 +165,44 @@ a {
   fill: #ff7eee;
   fill: #df49a6;
   fill: var(--color-secondary);
+  transition: var(--transition-speed);
 }
 
 .icon--logo {
   fill: #5b8386;
+  fill: var(--color-accent);
+  fill: hsl(91, 82%, 56%);
+  fill: hsl(204, 82%, 56%);
+  /* fill: hsl(249, 82%, 56%);
+  fill: hsl(229, 82%, 56%); */
+  /* fill: var(--color-headings); */
+}
+
+.logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-wrap::after {
   content: 'Skill Virtual Instructor';
   white-space: nowrap;
+  /* color: var(--color-accent);
+  color: #5b8386;
+  color: hsl(141, 52%, 56%);
+  color: hsl(160, 82%, 56%);
+  color: hsl(184, 82%, 56%);
+  color: hsl(318, 82%, 56%);
+  color: hsl(91, 82%, 56%);
+  color: #495057; */
+  color: hsl(210, 19%, 31%);
+  /* color: rgb(235, 201, 51); */
+  /* color: var(--color-headings); */ 
+  /* color: var(--color-primary); */
+  /* color: hsl(346, 82%, 56%); */
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-left: 0.5rem;
 }
 /*#495057*/
 
@@ -178,7 +214,7 @@ a {
 
   .logo-wrap::after {
     content: 'SkiVI';
-    
+    font-size: 1.8rem;
   }
 }
 
@@ -201,6 +237,7 @@ a {
 .input-group {
   display: flex;
   flex-direction: column;
+  padding: 2rem 1rem;
 }
 
 .input-group__link {
@@ -259,28 +296,76 @@ body::-webkit-scrollbar-thumb {
 
 /* Navigation Bar */
 .nav {
-  /*width: 100vw;
-  position: fixed;*/
   background-color: var(--bg-primary);
+  width: calc(100vw - 0.4rem);
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-
-  flex-wrap: wrap;
-  padding: 1rem;
   align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.nav__logo {
+  align-self: flex-start;
+  padding: 1rem 1rem;
+}
+
+.nav__logo:hover .logo-wrap::after {
+  color: var(--color-text-secondary);
+}
+
+.nav__logo:hover .icon--logo {
+  fill: var(--color-accent);
+}
+
+.nav__menu {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.nav__menu2 {
+  display: none;
+}
+
+.nav__menu:hover .nav__toggler,
+.nav__menu2:hover .nav__toggler2 {
+  /* fill: rgb(51, 235, 195); */
+  /* fill: #eb6d33; */
+  /* fill: #eb9533; */
+  fill: rgb(140, 235, 51);
+}
+
+
+.nav__collapsibles {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(240, 14%, 18%);
 }
 
 .nav__list {
-  width: 100%;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
 }
 
-/*TODO: fix align center
-.nav__item {
-  text-align: center;
-}*/
+.nav__login {
+  padding-bottom: 3rem;
+  border-top: 1px solid #585872;
+}
+
+.nav__text {
+  padding-left: 2rem;
+}
 
 .nav__link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 0;
   color: var(--color-text-primary);
 }
 
@@ -295,7 +380,7 @@ body::-webkit-scrollbar-thumb {
 .nav__toggler {
   width: 5rem;
   height: 5rem;
-  fill: var(--color-secondary);
+  fill: var(--color-headings);
   cursor: pointer;
 }
 
@@ -303,14 +388,44 @@ body::-webkit-scrollbar-thumb {
   fill: var(--color-primary);
 }
 
+.nav__user {
+  display: none;
+  padding: 2rem 0;
+}
+/* add class .user--logged to nav if user is logged-in*/
+.user--logged .nav__login {
+  display: none;
+}
+
+.user--logged .nav__user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user--logged .user__logo {
+  fill: hsl(318, 82%, 56%);
+}
+
+.user--logged .nav__user::after {
+  content: 'Username';
+}
+
+.user--logged .user-profile {
+  width: 40%;
+  border-top: 1px solid #585872;
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (min-width: 1024px) {
-  /*TODO: TEMP*/
-  main {
+  .main {
     margin-left: 8rem;
   }
 
   .nav {
     width: 8rem;
+    height: calc(100vh - 0.4rem);
     height: 100vh;
     position: fixed;
     flex-direction: column;
@@ -320,41 +435,154 @@ body::-webkit-scrollbar-thumb {
     transition: width 200ms ease;
   }
 
-  .nav__list {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    width: auto;
-    height: auto;
-
-    max-height: 100%;
-    opacity: 1;
+  .nav__logo {
+    align-self: initial;
+    padding-top: 3rem;
+    transition: background-color var(--transition-speed);
+    /* border-bottom: 1px solid #585872;
+    border-bottom: 1px solid hsl(240, 13%, 20%); */
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.185); */
   }
 
-  .nav__toggler {
+  .nav__logo:hover {
+    background-color: var(--bg-secondary);
+  }
+  
+  .logo-wrap {
+    flex-wrap: wrap;
+  }
+
+  .nav--expanded .icon--logo {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .nav--expanded .logo-wrap::after {
+    content: 'Skill Virtual Instructor';
+  }
+
+  .nav__menu {
     display: none;
+  }
+
+  .nav__menu2 {
+    display: block;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .nav__toggler2 {
+    width: 4.5rem;
+    height: 4.5rem;
+    fill: var(--color-headings);
+    cursor: pointer;
+  }
+
+  .nav--expanded .nav__toggler2 {
+    fill: var(--color-primary);
+  }
+
+  .nav__collapsibles {
+    max-height: 100%;
+    opacity: 1;
+    width: initial;
+    background-color: initial;
+    flex-grow: 1;
+    /* transition: all 0.3s cubic-bezier(.6,-0.28,.74,.05); */
+  }
+
+  .nav--expanded .nav__collapsibles {
+    width: 100%;
+    background-color: hsl(240, 14%, 18%);
+  }
+
+  .nav__list {
+    padding: 0;
+    flex-grow: 1;
+    justify-content: space-evenly;
+  }
+
+  .nav__login {
+    margin: 0;
+    padding: 0 2rem;
+    display: none;
+    border-top: initial;
+  }
+
+  .nav--expanded .nav__login {
+    display: flex;
   }
 
   .nav__text {
+    white-space: nowrap;
     display: none;
   }
 
-  .nav:hover {
-    width: 25.6rem;
+  .nav--expanded .nav__text {
+    display: inline;
   }
 
-  .nav:hover .nav__text {
-    display: block;
+  .nav--expanded {
+    width: 26.6rem;
+  }
+  
+  .user--logged .nav__login {
+    display: none;
+  }
+  
+  .user--logged .nav__user {
+    display: initial;
+  }
+
+  .user--logged .user__logo {
+    fill: var(--color-secondary);
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .user--logged .nav__user::after {
+    content: initial;
+  }
+
+  .nav--expanded.user--logged .nav__user::after {
+    content: 'Username';
+    padding-left: 1rem;
+  }
+
+  .nav--expanded.user--logged .user__logo {
+    fill: hsl(318, 82%, 56%);
+  }
+
+  .nav--expanded.user--logged .nav__user:hover .user__logo{
+    fill: var(--color-primary);
+  }
+
+  .user--logged .nav__user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .user--logged .user-profile {
+    border-top: initial;
+  }
+
+  .user--logged.nav--expanded .user-profile {
+    width: 100%;
+    /* border-top: 1px solid #585872;
+    border-bottom: 1px solid #585872; */
+    border-top: 1px solid rgba(255, 255, 255, 0.185);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.185);
+  }
+
+  .user--logged.nav--expanded .user-profile:hover {
+    background-color: var(--bg-primary);
   }
 }
-/*
+
+
+/*TEMP*/
 body {
+  /* width: 200vw; */
   height: 200vh;
-  width: 200vw;
 }
-*/
-
-
-
-

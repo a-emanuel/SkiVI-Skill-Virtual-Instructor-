@@ -13,45 +13,80 @@
     <title>Home - Skill Virtual Instructor</title>
   </head>
   <body>
-    <nav class="nav collapsible">
-      <a href="/">
+    <nav class="nav collapsible user--logge">
+      <a href="/" class="nav__logo">
+        <!-- Logo -->
         <div class="logo-wrap">
           <svg class="icon icon--logo">
             <use xlink:href="../Resources/sprite.svg#logohiking"></use>
           </svg>
         </div>
       </a>
-      <svg class="icon nav__toggler">
-        <use xlink:href="../Resources/sprite.svg#booksmenu"></use>
-      </svg>
-      <ul class="list nav__list collapsible__content">
-        <li class="nav__item">
-          <a href="#" class="nav__link">
-            <svg class="icon nav__icon">
-              <use xlink:href="../Resources/sprite.svg#guitar"></use>
+
+      <button class="btn nav__menu">
+        <!-- Menu -->
+        <svg class="icon nav__toggler" id="nav-menu-btn">
+          <use xlink:href="../Resources/sprite.svg#booksmenu"></use>
+        </svg>
+      </button>
+
+      <div class="nav__collapsibles collapsible__content">
+        <ul class="list nav__list">
+          <!-- Courses -->
+          <li>
+            <a href="#" class="nav__link">
+              <svg class="icon nav__icon">
+                <use xlink:href="../Resources/sprite.svg#guitar"></use>
+              </svg>
+              <span class="nav__text">Play Guitar</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav__link">
+              <svg class="icon nav__icon">
+                <use xlink:href="../Resources/sprite.svg#hearthbeat"></use>
+              </svg>
+              <span class="nav__text">Perform CPR</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav__link">
+              <svg class="icon nav__icon">
+                <use xlink:href="../Resources/sprite.svg#tent"></use>
+              </svg>
+              <span class="nav__text">Survive in Jungle</span>
+            </a>
+          </li>
+        </ul>
+
+        <a href="#" class="nav__link user-profile">
+          <div class="nav__user">
+            <svg class="icon nav__icon user__logo">
+              <use xlink:href="../Resources/sprite.svg#user"></use>
             </svg>
-            <span class="nav__text">Play Guitar</span>
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="#" class="nav__link">
-            <svg class="icon nav__icon">
-              <use xlink:href="../Resources/sprite.svg#hearthbeat"></use>
-            </svg>
-            <span class="nav__text">Perform CPR</span>
-          </a>
-        </li>
-        <li class="nav__item">
-          <a href="#" class="nav__link">
-            <svg class="icon nav__icon">
-              <use xlink:href="../Resources/sprite.svg#tent"></use>
-            </svg>
-            <span class="nav__text">Survive in Jungle</span>
-          </a>
-        </li>
-      </ul>
+          </div>
+        </a>
+
+        <div class="input-group nav__login">
+          <!-- Login -->
+          <input type="text" class="input" placeholder="Enter email" />
+          <input type="password" class="input" placeholder="Enter password" />
+          <button class="btn btn--primary">login</button>
+          <a href="../html/signup.html" class="link input-group__link">
+            Don't have an account? Sign-Up</a
+          >
+        </div>
+
+        <button class="btn nav__menu2">
+          <!-- Menu 2-->
+          <svg class="icon nav__toggler2" id="nav-menu-btn2">
+            <use xlink:href="../Resources/sprite.svg#booksmenu"></use>
+          </svg>
+        </button>
+      </div>
     </nav>
-    <main>
+
+    <main class="main">
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam cum
         numquam eaque nesciunt. Quibusdam ipsum ea error quod autem

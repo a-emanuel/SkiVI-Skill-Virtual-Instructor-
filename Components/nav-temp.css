@@ -1,0 +1,131 @@
+.nav {
+    width: 100vw;
+    position: fixed;
+    background-color: var(--bg-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    align-items: center;
+  }
+  
+  .nav__item {
+    align-self: center;
+    width: 100%;
+    border-top: 1px solid #585872;
+  }
+  
+  /* .nav-test {
+    top: 130px;
+  } */
+  
+  /****************************TODO: Review code********************************/
+  
+  .nav__list {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .nav__login {
+    max-width: 50vw;
+    min-width: 32rem;
+  }
+  
+  /*TODO: fix align center
+  .nav__item {
+    text-align: center;
+  }*/
+  
+  .nav__link {
+    color: var(--color-text-primary);
+  }
+  
+  .nav__link:hover {
+    color: var(--color-text-secondary);
+  }
+  
+  .nav__link:hover .nav__icon {
+    fill: var(--color-primary);
+  }
+  
+  .nav__toggler {
+    width: 5rem;
+    height: 5rem;
+    fill: var(--color-secondary);
+    cursor: pointer;
+  }
+  
+  .collapsible--expanded .nav__toggler {
+    fill: var(--color-primary);
+  }
+  
+  @media screen and (min-width: 1024px) {
+    /*TODO: TEMP*/ /*
+    main {
+      margin-left: 8rem;
+    }
+  
+    .nav {
+      width: 8rem;
+      height: 100vh;
+      position: fixed;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0;
+      transition: width 200ms ease;
+    }
+  
+    .nav__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: auto;
+      height: auto;
+  
+      max-height: 100%;
+      opacity: 1;
+    }
+  
+    
+  
+    .nav__toggler {
+      display: none;
+    }
+  
+    .nav__text {
+      max-height: 0;
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+  
+    .nav__login {
+      max-height: 0;
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+  
+    .nav:hover {
+      width: 25.6rem;
+    }
+  
+    .nav:hover .nav__text {
+      max-height: 100%;
+      opacity: 1;
+    }
+  
+    .nav:hover .nav__login {
+      max-height: 100%;
+      opacity: 1;
+    }
+  
+    
+  }
+  /*
+  body {
+    height: 200vh;
+    width: 200vw;
+  }
+  */
