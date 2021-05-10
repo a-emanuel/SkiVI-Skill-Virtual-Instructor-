@@ -205,6 +205,11 @@ a {
   padding-left: 0.5rem;
 }
 /*#495057*/
+@media screen and (max-width: 420px) {
+   .logo-wrap::after {
+    content: 'SkiVI';
+  }
+}
 
 @media screen and (min-width: 1024px) {
   .icon {
