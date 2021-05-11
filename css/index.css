@@ -14,6 +14,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -28,8 +29,9 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--color-headings);
+  color: var(--color-accent);
   margin-bottom: 2.5rem;
+  transition: var(--transition-speed);
 }
 
 h1 {
@@ -66,6 +68,51 @@ p {
   }
 }
 
+/* Icons */
+.icon {
+  width: 5rem;
+  height: 5rem;
+  fill: var(--color-secondary);
+  transition: var(--transition-speed);
+}
+
+.icon--logo {
+  fill: hsl(204, 82%, 56%);
+}
+
+.logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-wrap::after {
+  content: "Skill Virtual Instructor";
+  white-space: nowrap;
+  color: hsl(210, 19%, 31%);
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-left: 0.5rem;
+}
+
+@media screen and (max-width: 420px) {
+  .logo-wrap::after {
+    content: "SkiVI";
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .icon {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  .logo-wrap::after {
+    content: "SkiVI";
+    font-size: 1.8rem;
+  }
+}
+
 /* Links */
 a {
   text-decoration: none;
@@ -98,6 +145,7 @@ a {
 
 .link-course:hover .link-course__arrow {
   margin-left: 8px;
+  fill: var(--color-primary);
 }
 
 @media screen and (min-width: 1024px) {
@@ -155,71 +203,6 @@ a {
 @media screen and (min-width: 1024px) {
   .btn {
     font-size: 1.5rem;
-  }
-}
-
-/* Icons */
-.icon {
-  width: 5rem;
-  height: 5rem;
-  fill: #ff7eee;
-  fill: #df49a6;
-  fill: var(--color-secondary);
-  transition: var(--transition-speed);
-}
-
-.icon--logo {
-  fill: #5b8386;
-  fill: var(--color-accent);
-  fill: hsl(91, 82%, 56%);
-  fill: hsl(204, 82%, 56%);
-  /* fill: hsl(249, 82%, 56%);
-  fill: hsl(229, 82%, 56%); */
-  /* fill: var(--color-headings); */
-}
-
-.logo-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-wrap::after {
-  content: 'Skill Virtual Instructor';
-  white-space: nowrap;
-  /* color: var(--color-accent);
-  color: #5b8386;
-  color: hsl(141, 52%, 56%);
-  color: hsl(160, 82%, 56%);
-  color: hsl(184, 82%, 56%);
-  color: hsl(318, 82%, 56%);
-  color: hsl(91, 82%, 56%);
-  color: #495057; */
-  color: hsl(210, 19%, 31%);
-  /* color: rgb(235, 201, 51); */
-  /* color: var(--color-headings); */ 
-  /* color: var(--color-primary); */
-  /* color: hsl(346, 82%, 56%); */
-  font-size: 2.5rem;
-  font-weight: bold;
-  padding-left: 0.5rem;
-}
-/*#495057*/
-@media screen and (max-width: 420px) {
-   .logo-wrap::after {
-    content: 'SkiVI';
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .icon {
-    width: 3.8rem;
-    height: 3.8rem;
-  }
-
-  .logo-wrap::after {
-    content: 'SkiVI';
-    font-size: 1.8rem;
   }
 }
 
@@ -311,16 +294,16 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 
-.nav__logo {
+.skivi-logo {
   align-self: flex-start;
   padding: 1rem 1rem;
 }
 
-.nav__logo:hover .logo-wrap::after {
+.skivi-logo:hover .logo-wrap::after {
   color: var(--color-text-secondary);
 }
 
-.nav__logo:hover .icon--logo {
+.skivi-logo:hover .icon--logo {
   fill: var(--color-accent);
 }
 
@@ -336,12 +319,8 @@ body::-webkit-scrollbar-thumb {
 
 .nav__menu:hover .nav__toggler,
 .nav__menu2:hover .nav__toggler2 {
-  /* fill: rgb(51, 235, 195); */
-  /* fill: #eb6d33; */
-  /* fill: #eb9533; */
   fill: rgb(140, 235, 51);
 }
-
 
 .nav__collapsibles {
   width: 100%;
@@ -413,7 +392,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .user--logged .nav__user::after {
-  content: 'Username';
+  content: "Username";
 }
 
 .user--logged .user-profile {
@@ -423,36 +402,48 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
 }
 
-@media screen and (min-width: 1024px) {
-  .main {
-    margin-left: 8rem;
-  }
+.page-top {
+  display: block;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 2rem;
+  transform: rotate(-90deg);
+}
 
+.page-top .icon {
+  fill: var(--color-link);
+}
+
+.page-top:hover .icon {
+  fill: rgb(140, 235, 51);
+}
+
+@media screen and (min-width: 1024px) {
   .nav {
     width: 8rem;
     height: calc(100vh - 0.4rem);
     height: 100vh;
     position: fixed;
+    top: 0;
+    left: 0;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: nowrap;
     padding: 0;
     transition: width 200ms ease;
   }
 
-  .nav__logo {
+  .skivi-logo {
     align-self: initial;
     padding-top: 3rem;
     transition: background-color var(--transition-speed);
-    /* border-bottom: 1px solid #585872;
-    border-bottom: 1px solid hsl(240, 13%, 20%); */
-    /* border-bottom: 1px solid rgba(255, 255, 255, 0.185); */
   }
 
-  .nav__logo:hover {
+  .skivi-logo:hover {
     background-color: var(--bg-secondary);
   }
-  
+
   .logo-wrap {
     flex-wrap: wrap;
   }
@@ -463,7 +454,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .nav--expanded .logo-wrap::after {
-    content: 'Skill Virtual Instructor';
+    content: "Skill Virtual Instructor";
   }
 
   .nav__menu {
@@ -493,7 +484,6 @@ body::-webkit-scrollbar-thumb {
     width: initial;
     background-color: initial;
     flex-grow: 1;
-    /* transition: all 0.3s cubic-bezier(.6,-0.28,.74,.05); */
   }
 
   .nav--expanded .nav__collapsibles {
@@ -530,11 +520,11 @@ body::-webkit-scrollbar-thumb {
   .nav--expanded {
     width: 26.6rem;
   }
-  
+
   .user--logged .nav__login {
     display: none;
   }
-  
+
   .user--logged .nav__user {
     display: initial;
   }
@@ -550,7 +540,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .nav--expanded.user--logged .nav__user::after {
-    content: 'Username';
+    content: "Username";
     padding-left: 1rem;
   }
 
@@ -558,7 +548,7 @@ body::-webkit-scrollbar-thumb {
     fill: hsl(318, 82%, 56%);
   }
 
-  .nav--expanded.user--logged .nav__user:hover .user__logo{
+  .nav--expanded.user--logged .nav__user:hover .user__logo {
     fill: var(--color-primary);
   }
 
@@ -574,8 +564,6 @@ body::-webkit-scrollbar-thumb {
 
   .user--logged.nav--expanded .user-profile {
     width: 100%;
-    /* border-top: 1px solid #585872;
-    border-bottom: 1px solid #585872; */
     border-top: 1px solid rgba(255, 255, 255, 0.185);
     border-bottom: 1px solid rgba(255, 255, 255, 0.185);
   }
@@ -583,11 +571,91 @@ body::-webkit-scrollbar-thumb {
   .user--logged.nav--expanded .user-profile:hover {
     background-color: var(--bg-primary);
   }
+
+  .page-top {
+    display: none;
+  }
 }
 
+/* Courses Description */
+.main {
+  display: flex;
+  flex-direction: column;
+}
 
-/*TEMP*/
-body {
-  /* width: 200vw; */
-  height: 200vh;
+.desc {
+  padding: 2rem;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom: 2px dashed var(--bg-secondary);
+  transition: var(--transition-speed);
+}
+
+.desc:hover h2 {
+  color: var(--color-primary);
+}
+
+.desc:hover .icon-c {
+  fill: var(--color-headings);
+}
+
+.desc p {
+  padding-top: 3rem;
+}
+
+.desc--courses {
+  justify-content: center;
+  align-items: center;
+}
+
+.desc--courses h1 {
+  color: hsl(204, 82%, 56%);
+}
+
+.desc--courses p {
+  text-align: center;
+}
+
+.icon-c {
+  width: 15rem;
+  height: 15rem;
+  margin: 0 3rem 1rem 3rem;
+  float: left;
+  fill: var(--color-secondary);
+  transition: var(--transition-speed);
+}
+
+.desc--cpr p {
+  text-align: right;
+}
+
+.icon--cpr {
+  float: right;
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    margin-left: 8rem;
+  }
+
+  .desc {
+    padding: 3rem;
+    background-color: #495057;
+  }
+  
+  .desc:hover {
+    background-color: white;
+  }
+
+  .icon-c {
+    width: 35rem;
+    height: 35rem;
+    margin: 0 3rem 3rem 3rem;
+  }
+
+  .desc--cpr p {
+    padding-top: 8rem;
+  }
 }

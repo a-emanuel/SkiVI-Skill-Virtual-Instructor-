@@ -1,0 +1,59 @@
+.logo-wrap::after {
+    /* color: var(--color-accent);
+    color: #5b8386;
+    color: hsl(141, 52%, 56%);
+    color: hsl(160, 82%, 56%);
+    color: hsl(184, 82%, 56%);
+    color: hsl(318, 82%, 56%);
+    color: hsl(91, 82%, 56%);
+    color: #495057; */
+    color: hsl(210, 19%, 31%);
+    /* color: rgb(235, 201, 51); */
+    /* color: var(--color-headings); */ 
+    /* color: var(--color-primary); */
+    /* color: hsl(346, 82%, 56%); */
+    /*#495057*/
+  }
+  
+  .icon--logo {
+    fill: #5b8386;
+    fill: var(--color-accent);
+    fill: hsl(91, 82%, 56%);
+    fill: hsl(204, 82%, 56%);
+    /* fill: hsl(249, 82%, 56%);
+    fill: hsl(229, 82%, 56%); */
+    /* fill: var(--color-headings); */
+  }
+
+  .icon {
+    fill: #ff7eee;
+    fill: #df49a6;
+    fill: var(--color-secondary);
+    transition: var(--transition-speed);
+  }
+
+  .nav__menu:hover .nav__toggler,
+.nav__menu2:hover .nav__toggler2 {
+  /* fill: rgb(51, 235, 195); */
+  /* fill: #eb6d33; */
+  /* fill: #eb9533; */
+  fill: rgb(140, 235, 51);
+}
+
+.skivi-logo {
+    align-self: initial;
+    /* border-bottom: 1px solid #585872;
+    border-bottom: 1px solid hsl(240, 13%, 20%); */
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.185); */
+}
+
+.nav__collapsibles {
+    max-height: 100%;
+    /* transition: all 0.3s cubic-bezier(.6,-0.28,.74,.05); */
+}
+
+.user--logged.nav--expanded .user-profile {
+    width: 100%;
+    /* border-top: 1px solid #585872;
+    border-bottom: 1px solid #585872; */
+  }
