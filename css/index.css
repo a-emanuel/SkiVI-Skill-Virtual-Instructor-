@@ -2,8 +2,8 @@
 :root {
   --color-primary: #eb335e;
   --color-secondary: #9233eb;
-  --color-accent: #34eb74;
-  --color-headings: #ebbd33;
+  --color-headings: #34eb74;
+  --color-accent: #ebbd33;
   --color-text-primary: #b6b6b6;
   --color-text-secondary: #ececec;
   --color-link: #495057;
@@ -29,7 +29,7 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--color-accent);
+  color: var(--color-headings);
   margin-bottom: 2.5rem;
   transition: var(--transition-speed);
 }
@@ -212,7 +212,7 @@ a {
   border: 1px solid #ccc;
   border-radius: 6px;
   outline: 0;
-  color: var(--color-headings);
+  color: var(--color-accent);
   background-color: var(--color-link);
   font-size: 2rem;
   margin: 0.2rem;
@@ -304,7 +304,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .skivi-logo:hover .icon--logo {
-  fill: var(--color-accent);
+  fill: var(--color-headings);
 }
 
 .nav__menu {
@@ -364,7 +364,7 @@ body::-webkit-scrollbar-thumb {
 .nav__toggler {
   width: 5rem;
   height: 5rem;
-  fill: var(--color-headings);
+  fill: var(--color-accent);
   cursor: pointer;
 }
 
@@ -470,7 +470,7 @@ body::-webkit-scrollbar-thumb {
   .nav__toggler2 {
     width: 4.5rem;
     height: 4.5rem;
-    fill: var(--color-headings);
+    fill: var(--color-accent);
     cursor: pointer;
   }
 
@@ -598,7 +598,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .desc:hover .icon-c {
-  fill: var(--color-headings);
+  fill: var(--color-accent);
 }
 
 .desc p {
@@ -642,7 +642,7 @@ body::-webkit-scrollbar-thumb {
 
   .desc {
     padding: 3rem;
-    background-color: #495057;
+    background-color: hsl(240, 14%, 23%);
   }
   
   .desc:hover {

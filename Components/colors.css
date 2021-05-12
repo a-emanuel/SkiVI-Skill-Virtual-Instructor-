@@ -57,3 +57,11 @@
     /* border-top: 1px solid #585872;
     border-bottom: 1px solid #585872; */
   }
+
+  .desc {
+    padding: 3rem;
+    background-color: hsl(210, 9%, 31%);
+    background-color: hsl(210, 9%, 90%);
+    background-color: hsl(240, 14%, 23%);
+    /* background-color: hsl(240, 14%, 16%); */
+  }
